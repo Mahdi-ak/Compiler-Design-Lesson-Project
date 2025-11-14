@@ -1,9 +1,12 @@
-#exapmle
+# Exapmle
 
 ```
 go run main.go 
 Enter text (Ctrl+D to end):
 This is a compiler desing project.
+```
+#Output:
+```
 Type: ID         | Lit: "This" | Pos: 0
 Type: WhiteSpace | Lit: " " | Pos: 4
 Type: ID         | Lit: "is" | Pos: 5
