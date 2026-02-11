@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"compiler/lexer"
+	"compiler/parserx"
 	"compiler/tokenx"
 	"fmt"
 	"os"
@@ -33,13 +34,17 @@ func main() {
 		input = "var1 123 45.67 _ok 999. .notok abc_123\n\t42\n"
 		fmt.Println("Using sample input:\n" + input)
 	}
-
+	tokens := []tokenx.Token{}
 	lex := lexer.New(input)
 	for {
 		tok := lex.NextToken()
+		tokens = append(tokens, tok)
 		if tok.Type == tokenx.EOF {
 			break
 		}
 		fmt.Printf("Type: %-10s | Lit: %q | Pos: %d\n", tok.Type, tok.Lit, tok.Pos)
 	}
+
+	p := parserx.New(tokens)
+	p.Parse()
 }
