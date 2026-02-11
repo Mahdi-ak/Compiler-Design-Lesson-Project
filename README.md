@@ -40,6 +40,7 @@
 
 ## فلو کلی کامپایل شدن
 
+```mermaid
 flowchart TD
     A[Source Code] --> B[Lexical Analysis]
     B --> C[Syntax Analysis]
@@ -48,6 +49,7 @@ flowchart TD
     E --> F[Code Optimization]
     F --> G[Code Generation]
     G --> H[Executable Code]
+```
 
 ---
 
@@ -59,11 +61,13 @@ flowchart TD
 * خروجی: Tokens
 * وظیفه: حذف فاصله‌ها و کامنت‌ها، تشخیص کلمات کلیدی (Keywords)، شناسه‌ها (Identifiers) و عملگرها (Operators).
 
+```mermaid
 flowchart TD
     A[Source Code] --> B[Lexical Analyzer]
     B --> C{Token Recognized?}
     C -->|Yes| D[Return Token]
     C -->|No| E[Error Handling]
+```
 
 ### 2. Syntax Analyzer
 
@@ -71,11 +75,13 @@ flowchart TD
 * خروجی: Parse Tree / AST
 * وظیفه: بررسی Syntax Rules و تولید ساختار درختی برنامه.
 
+```mermaid
 flowchart TD
     A[Tokens] --> B[Syntax Analyzer]
     B --> C{Syntax Correct?}
     C -->|Yes| D[Generate AST]
     C -->|No| E[Syntax Error]
+```
 
 ### 3. Semantic Analyzer
 
@@ -83,11 +89,13 @@ flowchart TD
 * خروجی: Decorated AST / Symbol Table
 * وظیفه: بررسی معنایی برنامه مانند Type Checking و اطمینان از درست بودن استفاده از متغیرها و توابع.
 
+```mermaid
 flowchart TD
     A[AST] --> B[Semantic Analyzer]
     B --> C{Semantically Correct?}
     C -->|Yes| D[Decorated AST / Symbol Table]
     C -->|No| E[Semantic Error]
+```
 
 ---
 
