@@ -6,6 +6,7 @@ import (
 	"compiler/parserx"
 	"compiler/tokenx"
 	"fmt"
+	"io"
 	"os"
 )
 
@@ -26,7 +27,7 @@ func main() {
 		}
 		input = all
 	} else {
-		bytes, _ := os.ReadFile("/dev/stdin")
+		bytes, _ := io.ReadAll(os.Stdin)
 		input = string(bytes)
 	}
 
